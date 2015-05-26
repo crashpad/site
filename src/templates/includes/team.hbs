@@ -1,13 +1,17 @@
-{{#each team}}
-<div class="member">
-    <div class="member-avatar">
-        <img class="member-photo" src="{{ photo }}" alt="" />
+<div class="team row">
+
+    {{#each team}}
+    <div class="member col-sm-6">
+        <div class="member-avatar">
+            <img class="member-photo" src="{{ photo }}" alt="" />
+        </div>
+        <h2 class="member-title">{{ name }} <span class="member-profession">{{ profession }}</span></h2>
+        <p class="member-text">{{ text }}</p>
+        <p class="member-links">
+            <a href="https://twitter.com/{{ twitter }}">Twitter</a>
+            <a href="https://github.com/{{ github }}">GitHub</a>
+        </p>
     </div>
-    <h2 class="member-title">{{ name }} <span class="member-profession">{{ profession }}</span></h2>
-    <p class="member-text">{{ text }}</p>
-    <p class="member-links">
-        <a href="https://twitter.com/{{ twitter }}">Twitter</a>
-        <a href="https://github.com/{{ github }}">GitHub</a>
-    </p>
+    {{/each}}
+
 </div>
-{{/each}}

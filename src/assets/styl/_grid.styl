@@ -1,80 +1,75 @@
 //
 // Grid
 //
-
+// https://github.com/zemirco/flexbox-grid
+// slightly modified by @kremalicious
 //
-// Reset the box-sizing
-//
-*
-    box-sizing border-box
-    &:before,
-    &:after
-        box-sizing border-box
 
+// variables
+var-columns = 12
+var-gutter-width = 4rem
+
+// some styles that apply to all columns - makes final css nicer
+// http://learnboost.github.io/stylus/docs/extend.html -> Extending placeholder selectors
+$common-column-styles
+  box-sizing(border-box)
+  padding-left var-gutter-width
+  padding-right var-gutter-width
+
+// wrapper around our rows
 .container
-    padding: 0 7%
-    width: 100%
+  @extend $common-column-styles
+  max-width $container-md
+  margin auto
 
-.col1,
-.col2,
-.col3,
-.col4,
-.col5,
-.col6
-    width: 100%
-    margin-left: 0
-    // ensures empty columns won't collapse
-    min-height: 1px
-
-// clear
-.container,
+// the row
 .row
-    @extend .clearfix
+  box-sizing(border-box)
+  display flex
+  flex-wrap wrap
+  margin-left - var-gutter-width
+  margin-right - var-gutter-width
 
-@media $screen-sm
-    .container
-        padding: 0 15%
+// generates col-xs-1, col-xs-2, ..., col-xs-12
+grid(klass)
+  for num in (1..var-columns)
+    .col-{klass}-{num}
+      @extend $common-column-styles
+      // !important is needed to override .row > div
+      flex-basis (100/var-columns)%*num !important
 
-    .row
-        //max-width: $container-sm
-        margin: 0 auto
-        padding-left: 0
-        padding-right: 0
+// generates col-xs-offset-1, col-xs-offset-2, ..., col-xs-offset-11
+offset(klass)
+  for num in (1..var-columns - 1)
+    .col-{klass}-offset-{num}
+      margin-left (100/var-columns)%*num
 
-    .col1,
-    .col2,
-    .col3,
-    .col4,
-    .col5,
-    .col6
-        float: left
-        margin-left: 4%
+// use flex for auto width columns
+.col-auto
+  @extend $common-column-styles
+  // !important is needed to override .row > div
+  flex 1 1 0 !important
 
-    .col1:first-child,
-    .col2:first-child,
-    .col3:first-child,
-    .col4:first-child,
-    .col5:first-child,
-    .col6,
-    .col3:nth-child(2n+3),
-    .col2:nth-child(3n+4),
-    .col1:nth-child(6n+7)
-        margin-left: 0
-        clear: both
+// set default style to full width
+// so we don't have to use col-xs-12 every time we want a column to be full width on xs screen
+.row > div
+  flex-basis 100%
 
-    .col1
-        width: 13%
-    .col2
-        width: 30.6%
-    .col3
-        width: 48%
-    .col4
-        width: 65%
-    .col5
-        width: 82%
-    .col6
-        width: 100%
+// generate default / mobile first xs grid
+grid('xs')
+offset('xs')
 
-@media $screen-md
-    .row
-        max-width: $container-md
+// tablet styles
+@media (min-width: $screen-sm-min)
+  grid('sm')
+  offset('sm')
+
+// desktop styles
+@media (min-width: $screen-md-min)
+  grid('md')
+  offset('md')
+
+// large styles
+@media (min-width: $screen-lg-min)
+  grid('lg')
+  offset('lg')

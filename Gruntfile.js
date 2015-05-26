@@ -145,7 +145,7 @@ module.exports = function(grunt) {
                 tasks: ['uglify']
             },
             templates: {
-                files: ['<%= c.src %>/**/*.hbs'],
+                files: ['<%= c.src %>/**/*.{hbs,json,yml}'],
                 tasks: ['assemble']
             },
             images: {

@@ -1,6 +1,7 @@
 {
   "name": "crashpad-site",
   "version": "0.1.0",
+  "license": "MIT",
   "dependencies": {
     "normalize-css": ">=3.0.1",
     "normalize-opentype.css": ">=0.1.2",

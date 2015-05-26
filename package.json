@@ -3,6 +3,7 @@
   "author": "Matthias Kretschmann <m@kretschmann.io>",
   "description": "Crashpad Site",
   "version": "0.1.0",
+  "license": "MIT",
   "scripts": {
     "postinstall": "bower install"
   },

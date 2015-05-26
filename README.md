@@ -2,6 +2,8 @@
 
 > Landing page for the Crashpad Collective
 
+[ ![Codeship Status for crashpad/site](https://www.codeship.io/projects/fdda2d50-e5b7-0132-fa1c-266c7b4e6c8b/status?branch=master)](https://www.codeship.io/projects/82082)
+
 ![](https://cloud.githubusercontent.com/assets/90316/7809315/8af76382-0399-11e5-8429-3446d1633afe.gif)
 
 This repository does the following:

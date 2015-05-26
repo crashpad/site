@@ -1,0 +1,53 @@
+---
+label-name: Your name
+label-email: Your email
+label-site: Your website
+label-budget: Your budget
+label-brief: Tell us about your project
+
+action:
+---
+
+<form class="form-contact row" action="{{ contact.action }}">
+
+    <div class="col-sm-6">
+        <p class="form-group">
+            <label for="name" class="visuallyhidden">{{ contact.label-name }}</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="{{ contact.label-name }}" required>
+        </p>
+
+        <p class="form-group">
+            <label for="email" class="visuallyhidden">{{ contact.label-email }}</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="{{ contact.label-email }}" required>
+        </p>
+    </div>
+
+    <div class="col-sm-6">
+        <p class="form-group">
+            <label for="website" class="visuallyhidden">{{ contact.label-site }}</label>
+            <input type="text" class="form-control" name="website" id="website" placeholder="{{ contact.label-site }}">
+        </p>
+
+        <p class="form-group">
+            <label for="budget" class="visuallyhidden">{{ contact.label-budget }}</label>
+            <select class="form-control" name="budget" id="budget" required>
+                <option selected disabled value="null">{{ contact.label-budget }}</option>
+                <option value="discuss">Let's discuss</option>
+                <option value="weekly-ongoing">Weekly / Ongoing</option>
+                <option value="3000-5000">3 000€ - 5 000€</option>
+                <option value="6000-10000">6 000€ - 10 000€</option>
+                <option value="11000-higher">11 000€ &amp; higher</option>
+            </select>
+        </p>
+    </div>
+
+    <div class="col-sm-12">
+        <p class="form-group">
+            <label for="brief" class="visuallyhidden">{{ contact.label-brief }}</label>
+            <textarea name="brief" id="brief" class="form-control" rows="3" cols="40" placeholder="{{ contact.label-brief }}" required></textarea>
+        </p>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+
+</form>

@@ -13,7 +13,7 @@ $brand-grey-dimmed      = #5c6367
 // Scaffolding
 //
 $body-bg                ?= $brand-dark
-$text-color             ?= $brand-grey
+$text-color             ?= $brand-grey-dimmed
 
 $link-color             ?= $brand-grey-light
 $link-hover-color       ?= lighten($link-color, 15%)
@@ -23,7 +23,7 @@ $link-hover-decoration  ?= none
 //
 // Typography
 //
-$font-size-base         ?= 16px
+$font-size-base         ?= 18px
 $font-size-large        ?= ceil(($font-size-base * 1.25))
 $font-size-small        ?= ceil(($font-size-base * 0.8))
 
@@ -43,7 +43,7 @@ $line-height-computed   ?= floor(($font-size-base * $line-height-base))
 $headings-font-family   ?= $font-family-base
 $headings-font-weight   ?= 300
 $headings-line-height   ?= 1.2
-$headings-color         ?= inherit
+$headings-color         ?= $brand-grey
 
 
 //
@@ -96,13 +96,13 @@ $container-lg               ?= 1100px
 //
 // Forms
 //
-$input-color                ?= $brand-grey
-$input-border-radius        ?= 2px
+$input-color                ?= $brand-grey-light
+$input-border-radius        ?= 0
 $input-border-radius-large  ?= 0
 $input-border-radius-small  ?= 0
 
-$input-border-focus         ?= #66afe9
-$input-color-placeholder    ?= $brand-grey
+$input-border-focus         ?= $brand-grey
+$input-color-placeholder    ?= $brand-grey-dimmed
 
 $input-height-base          ?= ($line-height-computed + ($padding-base-vertical * 2) + 2)
 $input-height-large         ?= (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2)

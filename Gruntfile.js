@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    'use strict';
 
     // config
     var gruntConfig = {
@@ -25,21 +26,21 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        c: gruntConfig,
 
         // Clean stuff
-        clean: ['<%= config.dest %>/**'],
+        clean: ['<%= c.dest %>/**'],
 
         // Copy assets around
         copy: {
-            dist: {
+            assets: {
                 files: [{
                     expand: true,
-                    dot: true,
-                    cwd: '<%= config.src %>/',
-                    dest: '<%= config.dest %>/',
+                    cwd: '<%= c.src %>/',
+                    dest: '<%= c.dest %>/',
                     src: [
-                        '<%= config.assets %>/**',
-                        '!<%= config.assets.styl %>/**'
+                        'assets/**',
+                        '!<%= c.assets.stylus %>/**'
                     ]
                 }]
             }
@@ -52,7 +53,7 @@ module.exports = function(grunt) {
                     'include css': true
                 },
                 files: {
-                    '<%= config.dest %>/<%= config.assets.css %>/crashpad.min.css': '<%= config.src %>/<%= config.assets.styl %>/<%= config.assets.basename %>.styl'
+                    '<%= c.dest %>/<%= c.assets.css %>/<%= c.assets.basename %>.min.css': '<%= c.src %>/<%= c.assets.stylus %>/<%= c.assets.basename %>.styl'
                 }
             }
         },
@@ -64,7 +65,7 @@ module.exports = function(grunt) {
                     banner: '/* Crashpad Site | Author: Matthias Kretschmann <m@kretschmann.io> | © 2015 Crashpad Collective */'
                 },
                 files: {
-                    '<%= config.dest %>/<%= config.assets.css %>/<%= config.assets.basename %>.min.css': ['<%= config.dest %>/<%= config.assets.css %>/<%= config.assets.basename %>.min.css']
+                    '<%= c.dest %>/<%= c.assets.css %>/<%= c.assets.basename %>.min.css': ['<%= c.dest %>/<%= c.assets.css %>/<%= c.assets.basename %>.min.css']
                 }
             }
         },
@@ -73,10 +74,10 @@ module.exports = function(grunt) {
         uglify: {
             dist: {
                 files: {
-                    '<%= config.dest %>/<%= config.assets.js %>/<%= config.assets.basename %>.min.js': [
-                        '<%= config.src %>/<%= config.assets.js %>/*.js'
+                    '<%= c.dest %>/<%= c.assets.js %>/<%= c.assets.basename %>.min.js': [
+                        '<%= c.src %>/<%= c.assets.js %>/*.js'
                     ],
-                    '<%= config.dest %>/<%= config.assets.js %>/jquery.min.js': [
+                    '<%= c.dest %>/<%= c.assets.js %>/jquery.min.js': [
                         'bower_components/jquery/dist/jquery.js'
                     ]
                 }
@@ -86,14 +87,14 @@ module.exports = function(grunt) {
         // Assembles html layout
         assemble: {
             options: {
-                data: '<%= config.src %>/data/*.{json,yml}',
-                layoutdir: '<%= config.src %>/templates/layouts',
-                partials: ['<%= config.src %>/templates/includes/*.hbs'],
+                data: '<%= c.src %>/data/*.{json,yml}',
+                layoutdir: '<%= c.src %>/templates/layouts',
+                partials: ['<%= c.src %>/templates/includes/*.hbs'],
                 flatten: true
             },
             site: {
-                src: ['<%= config.src %>/pages/*.hbs'],
-                dest: '<%= config.dest %>/'
+                src: ['<%= c.src %>/pages/*.hbs'],
+                dest: '<%= c.dest %>/'
             }
         },
 
@@ -102,9 +103,9 @@ module.exports = function(grunt) {
             assets: {
                 files: [{
                     expand: true,
-                    cwd: '<%= config.dest %>/<%= config.assets.img %>/',
+                    cwd: '<%= c.dest %>/<%= c.assets.img %>/',
                     src: ['**/*.{png,jpg,jpeg,gif}'],
-                    dest: '<%= config.dest %>/<%= config.assets.img %>/'
+                    dest: '<%= c.dest %>/<%= c.assets.img %>/'
                 }]
             }
         },
@@ -113,20 +114,20 @@ module.exports = function(grunt) {
         rev: {
             files: {
                 src: [
-                    '<%= config.dest %>/<%= config.assets %>/{css,js,img,fonts}/*.*'
+                    '<%= c.dest %>/<%= c.assets %>/{css,js,img,fonts}/*.*'
                 ]
             }
         },
 
         // updating assets paths in html/css
         usemin: {
-            html: ['<%= config.dest %>/**/*.html'],
-            css: ['<%= config.dest %>/**/*.css'],
-            js: ['<%= config.dest %>/**/*.js'],
+            html: ['<%= c.dest %>/**/*.html'],
+            css: ['<%= c.dest %>/**/*.css'],
+            js: ['<%= c.dest %>/**/*.js'],
             options: {
-                dirs: '<%= config.dest %>',
-                basedir: '<%= config.dest %>',
-                assetsDirs: ['<%= config.dest %>', '<%= config.dest %>/<%= config.assets %>/{css,js,img,fonts}']
+                dirs: '<%= c.dest %>',
+                basedir: '<%= c.dest %>',
+                assetsDirs: ['<%= c.dest %>', '<%= c.dest %>/<%= c.assets %>/{css,js,img,fonts}']
             }
         },
 
@@ -136,19 +137,19 @@ module.exports = function(grunt) {
                 livereload: true
             },
             stylus: {
-                files: ['<%= config.src %>/**/*.styl'],
+                files: ['<%= c.src %>/**/*.styl'],
                 tasks: ['stylus']
             },
             js: {
-                files: ['<%= config.src %>/**/*.js'],
+                files: ['<%= c.src %>/**/*.js'],
                 tasks: ['uglify']
             },
             templates: {
-                files: ['<%= config.src %>/**/*.hbs'],
+                files: ['<%= c.src %>/**/*.hbs'],
                 tasks: ['assemble']
             },
             images: {
-                files: ['<%= config.src %>/<%= config.assets.img %>/**'],
+                files: ['<%= c.src %>/<%= c.assets.img %>/**'],
                 tasks: ['default']
             }
         },
@@ -159,7 +160,7 @@ module.exports = function(grunt) {
                 options: {
                     port: 1337,
                     hostname: '*',
-                    base: '<%= config.dest %>',
+                    base: '<%= c.dest %>',
                     open: {
                          target: 'http://localhost:1337'
                     }

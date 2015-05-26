@@ -1,0 +1,140 @@
+body
+    font-size: $font-size-base
+    font-family: $font-family-base
+    font-weight: $font-weight-base
+    line-height: $line-height-base
+    color: $text-color
+
+//
+// Links
+//
+a
+    color: $link-color
+    text-decoration: none
+
+    &:hover,
+    &:focus
+        color: $link-hover-color
+        text-decoration: $link-hover-decoration
+
+
+//
+// Headings
+//
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5
+    font-family: $headings-font-family
+    font-weight: $headings-font-weight
+    line-height: $headings-line-height
+    color: $headings-color
+    letter-spacing: 0.05em
+
+h1, h2, h3,
+.h1, .h2, .h3
+    margin-top: $line-height-computed
+    margin-bottom: ($line-height-computed / 2)
+
+h4, h5,
+.h4, .h5
+    margin-top: ($line-height-computed / 2)
+    margin-bottom: ($line-height-computed / 2)
+
+h1, .h1
+    font-size: $font-size-h1
+
+h2, .h2
+    font-size: $font-size-h2
+
+h3, .h3
+    font-size: $font-size-h3
+
+h4, .h4
+    font-size: $font-size-h4
+
+h5, .h5
+    font-size: $font-size-h5
+
+
+//
+// Body text
+//
+p
+    margin: 0 0 ($line-height-computed / 2)
+
+
+//
+// Emphasis & misc
+//
+
+// Ex: (12px small font / 14px base font) * 100% = about 85%
+small,
+.small
+    font-size: floor((100% * $font-size-small / $font-size-base))
+
+.large
+    font-size: $font-size-large
+
+// Alignment
+.text-left
+    text-align: left
+
+.text-right
+    text-align: right
+
+.text-center
+    text-align: center
+
+.text-justify
+    text-align: justify
+
+.text-nowrap
+    white-space: nowrap
+
+// Transformation
+.text-lowercase
+    text-transform: lowercase
+
+.text-uppercase
+    text-transform: uppercase
+
+.text-capitalize
+    text-transform: capitalize
+
+
+//
+// Lists
+//
+
+// Unordered and Ordered lists
+ul,
+ol
+    margin-top: 0
+    margin-bottom: ($line-height-computed / 2)
+    ul,
+    ol
+        margin-bottom: 0
+
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-inline,
+.list-unstyled
+    padding-left: 0
+    list-style: none
+
+// Inline turns list items into inline-block
+.list-inline
+    margin-left: -5px
+
+    > li
+        display: inline-block
+        padding-left: 5px
+        padding-right: 5px
+
+
+//
+// Lead intro text
+//
+.lead
+    @extend .large, .text-center
+    margin-bottom: ($line-height-computed*1.5)

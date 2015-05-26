@@ -1,0 +1,29 @@
+//
+// plumage landing page
+// --------------
+// The base file
+//
+
+//
+// Settings
+//
+vendors                     = official webkit       // Stylus' @keyframes settings
+vendor-prefixes             = webkit moz official   // Nib vendor prefixes
+support-for-ie              = false                 // Nib IE 8 support
+
+// Normalize all the things
+@import '../../../bower_components/normalize-css/normalize.css'
+@import '../../../bower_components/normalize-opentype.css/normalize-opentype.css'
+
+// Nib Nib
+@import 'nib'
+
+@import '_variables'
+@import '_mixins'
+
+@import '_typography'
+@import '_grid'
+@import '_forms'
+@import '_buttons'
+
+@import 'page-start'

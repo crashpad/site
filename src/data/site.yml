@@ -1,0 +1,18 @@
+# Basics
+# --------------------
+
+# name: used for the meta title and main heading in the hero
+name:                   Crashpad Collective
+
+# tagline: used for the meta title and sub-heading heading in the hero
+tagline:                'We craft experiences'
+
+# description: used for the meta description
+description:            'Crashpad Collective is a group of experienced, multi-disciplined software designers & engineers, crafting engaging experiences for humans.'
+
+url:                    http://crashpad.io
+author:                 Crashpad Collective
+
+twitter:                crashpad
+github:                 crashpad
+googleanalytics:        xxxxx

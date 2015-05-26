@@ -1,0 +1,140 @@
+//
+// Mixins
+//
+
+//
+// Micro Clearfix
+//
+clearfix()
+    &:after
+        content: ""
+        display: table
+        clear: both
+
+.clearfix
+    clearfix()
+
+//
+// Floats
+//
+
+pull-right()
+    float: right
+
+pull-left()
+    float: left
+
+.pull-right
+    pull-right()
+
+.pull-left
+    pull-left()
+
+
+//
+// Toggling content
+//
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+.hide
+    display: none !important
+    visibility: hidden
+
+.show
+    display: block
+    visibility: visible
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.visuallyhidden
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    margin: -1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+
+    // Extends the .visuallyhidden class to allow the
+    // element to be focusable when navigated to via the keyboard: h5bp.com/p
+    &.focusable:active,
+    &.focusable:focus
+        clip: auto
+        height: auto
+        margin: 0
+        overflow: visible
+        position: static
+        width: auto
+
+// Hide visually and from screenreaders, but maintain layout
+.invisible
+    visibility: hidden
+
+
+//
+// CSS image replacement
+//
+text-hide()
+    font: unquote("0/0") a
+    color: transparent
+    text-shadow: none
+    background-color: transparent
+    border: 0
+
+.text-hide
+    text-hide()
+
+//
+// Centering Blocks
+//
+block-center()
+    display: block
+    margin-left: auto
+    margin-right: auto
+
+.block-center
+    block-center()
+
+
+//
+// Button sizing
+//
+button-size(padding-vertical, padding-horizontal, font-size, line-height, border-radius)
+    padding: padding-vertical padding-horizontal
+    font-size: font-size
+    line-height: line-height
+    border-radius: border-radius
+
+
+//
+// Form control sizing
+//
+input-size(input-height, padding-vertical, padding-horizontal, font-size, line-height, border-radius)
+    height: input-height
+    padding: padding-vertical padding-horizontal
+    font-size: font-size
+    line-height: line-height
+    border-radius: border-radius
+
+    input[type="search"]&
+        background-size: font-size
+        background-position: padding-vertical center
+        padding-left: (padding-vertical*4)
+
+    select&
+        height: input-height
+        line-height: input-height
+
+    textarea&,
+    select[multiple]&
+        height: auto
+
+// Placeholder text
+placeholder($color = $input-color-placeholder)
+  &::-moz-placeholder // Firefox
+    color $color
+    opacity 1 // Override Firefox's unusual default opacity; See https//github.com/twbs/bootstrap/pull/11526
+  &:-ms-input-placeholder // Internet Explorer 10+
+    color $color
+  &::-webkit-input-placeholder // Safari and Chrome
+    color $color

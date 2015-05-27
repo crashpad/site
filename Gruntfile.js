@@ -40,7 +40,8 @@ module.exports = function(grunt) {
                     dest: '<%= c.dest %>/',
                     src: [
                         'assets/**',
-                        '!<%= c.assets.stylus %>/**'
+                        '!<%= c.assets.stylus %>/**',
+                        '!<%= c.assets.js %>/**'
                     ]
                 }]
             }
@@ -75,6 +76,7 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     '<%= c.dest %>/<%= c.assets.js %>/<%= c.assets.basename %>.min.js': [
+                        'bower_components/parsleyjs/dist/parsley.js',
                         '<%= c.src %>/<%= c.assets.js %>/*.js'
                     ],
                     '<%= c.dest %>/<%= c.assets.js %>/jquery.min.js': [
@@ -192,6 +194,7 @@ module.exports = function(grunt) {
         'clean',
         'copy',
         'stylus',
+        'uglify',
         'assemble',
         'connect',
         'watch'
@@ -203,6 +206,7 @@ module.exports = function(grunt) {
         'copy',
         'stylus',
         'cssmin',
+        'uglify',
         'assemble',
         'imagemin',
         'rev',

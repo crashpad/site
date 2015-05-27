@@ -9,13 +9,25 @@
         <p class="member-text">{{ text }}</p>
         <p class="member-links">
             {{#if twitter }}
-            <a href="https://twitter.com/{{ twitter }}">Twitter</a>
+            <a href="https://twitter.com/{{ twitter }}" title="Twitter">
+                <svg class="icon icon-twitter">
+                    <use xlink:href="/assets/img/sprite.svg#twitter"></use>
+                </svg>
+            </a>
             {{/if}}
             {{#if github }}
-            <a href="https://github.com/{{ github }}">GitHub</a>
+            <a href="https://github.com/{{ github }}" title="GitHub">
+                <svg class="icon icon-github">
+                    <use xlink:href="/assets/img/sprite.svg#github"></use>
+                </svg>
+            </a>
             {{/if}}
             {{#if dribbble }}
-            <a href="https://dribbble.com/{{ github }}">Dribbble</a>
+            <a href="https://dribbble.com/{{ dribbble }}" title="Dribbble">
+                <svg class="icon icon-dribbble">
+                    <use xlink:href="/assets/img/sprite.svg#dribbble"></use>
+                </svg>
+            </a>
             {{/if}}
         </p>
     </div>

@@ -25,6 +25,26 @@
 
     </main>
 
+    <footer class="container footer">
+        <div class="row">
+            <p class="col-sm-12">
+                {{#if site.twitter }}
+                <a href="https://twitter.com/{{ site.twitter }}">Twitter</a>
+                {{/if}}
+                {{#if site.github }}
+                <a href="https://github.com/{{ site.github }}">GitHub</a>
+                {{/if}}
+                {{#if site.dribbble }}
+                <a href="https://dribbble.com/{{ site.github }}">Dribbble</a>
+                {{/if}}
+            </p>
+            <p class="col-sm-12">
+                <small>&copy; 2015 Crashpad Collective</small>
+            </p>
+        </div>
+
+    </footer>
+
     {{> googleanalytics }}
 
     <script src="/assets/js/jquery.min.js"></script>

@@ -4,8 +4,8 @@ pablo:
     profession: Front End
     text: Opinionated human being. Rock climber, avid distance runner. Cofounder at @skillhoundapp. Ambassador at @BlueseedProject.
     photo: http://place-hoff.com/160/160/
-    twitter: xxx
-    github: xxx
+    twitter:
+    github:
 
 max:
     index: 2
@@ -13,8 +13,8 @@ max:
     profession: Front End
     text: Max turns Club Mate into code while listening to crazy music. He's focused on JavaScript and PHP.
     photo: http://place-hoff.com/160/160/
-    twitter: xxx
-    github: xxx
+    twitter:
+    github:
 
 marian:
     index: 3
@@ -22,8 +22,8 @@ marian:
     profession: Python, iOS, Mac, DevOps
     text: Python, iOS, Mac and devops guy. Former co-founder of @ezeep and Liquid Labs. Aspiring rock and ice climber.
     photo: http://place-hoff.com/160/160/
-    twitter: xxx
-    github: xxx
+    twitter:
+    github:
 
 matthias:
     index: 4
@@ -31,5 +31,6 @@ matthias:
     profession: Design
     text: Pixel, dots & CSS masseur. Considers a prototype without kittens as highly flawed.
     photo: http://place-hoff.com/160/160/
-    twitter: xxx
-    github: xxx
+    twitter: kremalicious
+    github: kremalicious
+    dribbble: kremalicious

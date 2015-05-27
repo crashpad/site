@@ -8,8 +8,15 @@
         <h2 class="member-title">{{ name }} <span class="member-profession">{{ profession }}</span></h2>
         <p class="member-text">{{ text }}</p>
         <p class="member-links">
+            {{#if twitter }}
             <a href="https://twitter.com/{{ twitter }}">Twitter</a>
+            {{/if}}
+            {{#if github }}
             <a href="https://github.com/{{ github }}">GitHub</a>
+            {{/if}}
+            {{#if dribbble }}
+            <a href="https://dribbble.com/{{ github }}">Dribbble</a>
+            {{/if}}
         </p>
     </div>
     {{/each}}

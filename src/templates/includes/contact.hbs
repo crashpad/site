@@ -5,7 +5,7 @@ label-site: Your website
 label-budget: Your budget
 label-brief: Tell us about your project
 
-action:
+action: //formspree.io/collective@crashpad.io
 ---
 
 <form class="form-contact row" id="form-contact" action="{{ contact.action }}">
@@ -46,6 +46,8 @@ action:
             <label for="brief" class="visuallyhidden">{{ contact.label-brief }}</label>
             <textarea name="brief" id="brief" class="form-control" rows="3" cols="40" placeholder="{{ contact.label-brief }}" required></textarea>
         </p>
+
+        <input type="hidden" name="_next" value="/thanks.html" />
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>

@@ -20,7 +20,7 @@
     "grunt-contrib-uglify": ">=0.5.1",
     "grunt-contrib-watch": ">=0.6.1",
     "grunt-rev": ">=0.1.0",
-    "grunt-svgstore": "^0.5.0",
+    "grunt-svgstore": ">=0.5.0",
     "grunt-usemin": ">=2.0.2",
     "nib": ">=1.0.3",
     "stylus": ">=0.47.3"

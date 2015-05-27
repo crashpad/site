@@ -81,6 +81,9 @@ module.exports = function(grunt) {
                     ],
                     '<%= c.dest %>/<%= c.assets.js %>/jquery.min.js': [
                         'bower_components/jquery/dist/jquery.js'
+                    ],
+                    '<%= c.dest %>/<%= c.assets.js %>/svg4everybody.min.js': [
+                        'bower_components/svg4everybody/svg4everybody.js'
                     ]
                 }
             }

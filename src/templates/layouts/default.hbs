@@ -2,7 +2,13 @@
 <html>
 
 <head>
-    <title>{{ site.name }} &middot; {{ site.tagline }}</title>
+    <title>
+        {{#is page.basename 'index'}}
+            {{ site.name }} &middot; {{ site.tagline }}
+        {{else}}
+            {{ page.title }} &middot; {{ site.name }}
+        {{/is}}
+    </title>
 
     <meta name="description" content="{{ site.description }}">
 
@@ -17,7 +23,7 @@
     {{> twittercards }}
 </head>
 
-<body>
+<body class="page-{{ page.basename }}">
 
     <main class="main container" role="main">
 

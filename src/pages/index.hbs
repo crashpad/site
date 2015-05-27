@@ -4,7 +4,11 @@ layout: default.hbs
 
 <header class="section header">
     <hgroup>
-        <img class="logo" src="/assets/img/logo.svg" alt="Logo Crashpad" />
+        <svg class="logo" role="img" aria-labelledby="title desc">
+            <title id="title">Logo</title>
+            <desc id="desc">Logo of Crashpad Collective</desc>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/sprite.svg#logo"></use>
+        </svg>
         <h1 class="title">{{ site.name }}</h1>
         <h2 class="tagline">{{ site.tagline }}</h2>
     </hgroup>

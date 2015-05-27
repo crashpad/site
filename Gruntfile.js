@@ -86,6 +86,18 @@ module.exports = function(grunt) {
             }
         },
 
+        // SVG sprite creation
+        svgstore: {
+            options: {
+                cleanup: ['fill','stroke']
+            },
+            default: {
+                files: {
+                    '<%= c.dest %>/<%= c.assets.img %>/sprite.svg': ['<%= c.src %>/<%= c.assets.img %>/*.svg'],
+                }
+            }
+        },
+
         // Assembles html layout
         assemble: {
             options: {
@@ -151,8 +163,12 @@ module.exports = function(grunt) {
                 tasks: ['assemble']
             },
             images: {
-                files: ['<%= c.src %>/<%= c.assets.img %>/**'],
+                files: ['<%= c.src %>/<%= c.assets.img %>/**/*.{png,jpg,jpeg,gif}'],
                 tasks: ['default']
+            },
+            svg: {
+                files: ['<%= c.src %>/<%= c.assets.img %>/*.svg'],
+                tasks: ['svgstore']
             }
         },
 
@@ -196,6 +212,7 @@ module.exports = function(grunt) {
         'stylus',
         'uglify',
         'assemble',
+        'svgstore',
         'connect',
         'watch'
     ]);
@@ -208,6 +225,7 @@ module.exports = function(grunt) {
         'cssmin',
         'uglify',
         'assemble',
+        'svgstore',
         'imagemin',
         'rev',
         'usemin'

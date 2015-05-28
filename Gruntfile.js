@@ -3,16 +3,16 @@ module.exports = function(grunt) {
 
     // config
     var gruntConfig = {
-            src: 'src',
-            dest: 'dist',
-            assets: {
-                basename: 'crashpad',
-                stylus:   'assets/styl',
-                css:      'assets/css',
-                js:       'assets/js',
-                img:      'assets/img',
-                fonts:    'assets/fonts'
-            }
+        src: 'src',
+        dest: 'dist',
+        assets: {
+            basename: 'crashpad',
+            stylus: 'assets/styl',
+            css: 'assets/css',
+            js: 'assets/js',
+            img: 'assets/img',
+            fonts: 'assets/fonts'
+        }
     };
 
     // banner
@@ -41,7 +41,8 @@ module.exports = function(grunt) {
                     src: [
                         'assets/**',
                         '!<%= c.assets.stylus %>/**',
-                        '!<%= c.assets.js %>/**'
+                        '!<%= c.assets.js %>/**',
+                        '!<%= c.assets.img %>/team/**'
                     ]
                 }]
             }
@@ -92,7 +93,7 @@ module.exports = function(grunt) {
         // SVG sprite creation
         svgstore: {
             options: {
-                cleanup: ['fill','stroke']
+                cleanup: ['fill', 'stroke']
             },
             default: {
                 files: {
@@ -112,6 +113,23 @@ module.exports = function(grunt) {
             site: {
                 src: ['<%= c.src %>/pages/*.hbs'],
                 dest: '<%= c.dest %>/'
+            }
+        },
+
+        // team images resizing
+        image_resize: {
+            team: {
+                options: {
+                    width: 240, // double the size as set in the css for lazy retina
+                    height: 240,
+                    overwrite: true
+                },
+                files: [{
+                    expand: true,
+                    cwd: '<%= c.src %>/<%= c.assets.img %>/team/',
+                    src: ['**/*.{png,jpg,jpeg,gif}'],
+                    dest: '<%= c.dest %>/<%= c.assets.img %>/team/'
+                }]
             }
         },
 
@@ -183,7 +201,7 @@ module.exports = function(grunt) {
                     hostname: '*',
                     base: '<%= c.dest %>',
                     open: {
-                         target: 'http://localhost:1337'
+                        target: 'http://localhost:1337'
                     }
                 }
             }
@@ -192,9 +210,9 @@ module.exports = function(grunt) {
     });
 
     // Load NPM Tasks, smart code stolen from @bluemaex <https://github.com/bluemaex>
-    require('fs').readdirSync('node_modules').filter(function (file) {
+    require('fs').readdirSync('node_modules').filter(function(file) {
         return file && file.indexOf('grunt-') > -1;
-    }).forEach(function (file) {
+    }).forEach(function(file) {
         grunt.loadNpmTasks(file);
     });
 
@@ -205,7 +223,8 @@ module.exports = function(grunt) {
     grunt.registerTask('default', [
         'copy',
         'stylus',
-        'assemble'
+        'assemble',
+        'image_resize'
     ]);
 
     // Dev server
@@ -216,6 +235,7 @@ module.exports = function(grunt) {
         'uglify',
         'assemble',
         'svgstore',
+        'image_resize',
         'connect',
         'watch'
     ]);
@@ -229,6 +249,7 @@ module.exports = function(grunt) {
         'uglify',
         'assemble',
         'svgstore',
+        'image_resize',
         'imagemin',
         'rev',
         'usemin'

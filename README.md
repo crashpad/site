@@ -15,8 +15,8 @@ This repository does the following:
 
 ## Prerequisites
 
-- [node.js](http://nodejs.org/) & [npm](https://npmjs.org/)
-- [Bower](http://bower.io/)
+- [node.js](http://nodejs.org/)
+- [npm](https://npmjs.org/)
 
 
 To get all dependencies run:
@@ -24,7 +24,7 @@ To get all dependencies run:
 npm install
 ```
 
-This will install all required npm packages and bower components in one go.
+This will install all required dependencies in one go.
 
 
 ## Development

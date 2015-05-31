@@ -32,35 +32,32 @@
     </main>
 
     <footer class="container footer">
-        <div class="row">
-            <p class="col-sm-12">
-                {{#if site.twitter }}
-                <a href="https://twitter.com/{{ site.twitter }}" title="Twitter">
-                    <svg class="icon icon-twitter">
-                        <use xlink:href="/assets/img/sprite.svg#twitter"></use>
-                    </svg>
-                </a>
-                {{/if}}
-                {{#if site.github }}
-                <a href="https://github.com/{{ site.github }}" title="GitHub">
-                    <svg class="icon icon-github">
-                        <use xlink:href="/assets/img/sprite.svg#github"></use>
-                    </svg>
-                </a>
-                {{/if}}
-                {{#if site.dribbble }}
-                <a href="https://dribbble.com/{{ site.dribbble }}" title="Dribbble">
-                    <svg class="icon icon-dribbble">
-                        <use xlink:href="/assets/img/sprite.svg#dribbble"></use>
-                    </svg>
-                </a>
-                {{/if}}
-            </p>
-            <p class="col-sm-12">
-                <small>&copy; 2015 Crashpad Collective</small>
-            </p>
-        </div>
-
+        <p>
+            {{#if site.twitter }}
+            <a href="https://twitter.com/{{ site.twitter }}" title="Twitter">
+                <svg class="icon icon-twitter">
+                    <use xlink:href="/assets/img/sprite.svg#twitter"></use>
+                </svg>
+            </a>
+            {{/if}}
+            {{#if site.github }}
+            <a href="https://github.com/{{ site.github }}" title="GitHub">
+                <svg class="icon icon-github">
+                    <use xlink:href="/assets/img/sprite.svg#github"></use>
+                </svg>
+            </a>
+            {{/if}}
+            {{#if site.dribbble }}
+            <a href="https://dribbble.com/{{ site.dribbble }}" title="Dribbble">
+                <svg class="icon icon-dribbble">
+                    <use xlink:href="/assets/img/sprite.svg#dribbble"></use>
+                </svg>
+            </a>
+            {{/if}}
+        </p>
+        <p>
+            <small>&copy; 2015 Crashpad Collective</small>
+        </p>
     </footer>
 
     {{> googleanalytics }}

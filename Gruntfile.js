@@ -66,10 +66,12 @@ module.exports = function(grunt) {
                 processors: [
                     // autoprefixer
                     require('autoprefixer-core')({browsers: 'last 2 versions'}),
-                    // css minification
-                    require('csswring'),
                     // combine media queries
-                    require('css-mqpacker')
+                    require('css-mqpacker'),
+                    // rem fallbacks
+                    require('pixrem'),
+                    // css minification
+                    require('csswring')
                 ]
             },
             dist: {

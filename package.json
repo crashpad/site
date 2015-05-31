@@ -28,9 +28,10 @@
     "grunt-rev": ">=0.1.0",
     "grunt-svgstore": ">=0.5.0",
     "grunt-usemin": ">=2.0.2",
+    "nib": ">=1.0.3",
     "normalize-css": ">=2.3.1",
     "normalize-opentype.css": ">=0.2.4",
-    "nib": ">=1.0.3",
+    "pixrem": ">=1.2.4",
     "stylus": ">=0.47.3"
   },
   "repository": {

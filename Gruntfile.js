@@ -60,15 +60,20 @@ module.exports = function(grunt) {
             }
         },
 
-        // CSS minification
-        cssmin: {
+        // Post process css
+        postcss: {
+            options: {
+                processors: [
+                    // autoprefixer
+                    require('autoprefixer-core')({browsers: 'last 2 versions'}),
+                    // css minification
+                    require('csswring'),
+                    // combine media queries
+                    require('css-mqpacker')
+                ]
+            },
             dist: {
-                options: {
-                    banner: '/* Crashpad Site | Author: Matthias Kretschmann <m@kretschmann.io> | © 2015 Crashpad Collective */'
-                },
-                files: {
-                    '<%= c.dest %>/<%= c.assets.css %>/<%= c.assets.basename %>.min.css': ['<%= c.dest %>/<%= c.assets.css %>/<%= c.assets.basename %>.min.css']
-                }
+                src: '<%= c.dest %>/<%= c.assets.css %>/<%= c.assets.basename %>.min.css'
             }
         },
 
@@ -173,7 +178,7 @@ module.exports = function(grunt) {
             },
             stylus: {
                 files: ['<%= c.src %>/**/*.styl'],
-                tasks: ['stylus']
+                tasks: ['stylus', 'postcss']
             },
             js: {
                 files: ['<%= c.src %>/**/*.js'],
@@ -232,6 +237,7 @@ module.exports = function(grunt) {
         'clean',
         'copy',
         'stylus',
+        'postcss',
         'uglify',
         'assemble',
         'svgstore',
@@ -245,7 +251,7 @@ module.exports = function(grunt) {
         'clean',
         'copy',
         'stylus',
-        'cssmin',
+        'postcss',
         'uglify',
         'assemble',
         'svgstore',

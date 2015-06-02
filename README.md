@@ -17,9 +17,16 @@ This repository does the following:
 
 - [node.js](http://nodejs.org/)
 - [npm](https://npmjs.org/)
+- [ImageMagick](http://www.imagemagick.org)
 
+To install all of the above in one go, use [Homebrew](http://brew.sh):
 
-To get all dependencies run:
+```bash
+brew install node imagemagick
+```
+
+Then, to get all dependencies run:
+
 ```bash
 npm install
 ```

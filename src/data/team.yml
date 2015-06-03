@@ -22,8 +22,8 @@ marian:
     profession: Python, iOS, Mac, DevOps
     text: Untangles tangled systems and chops problems into bite sized pieces. Aspiring rock and ice climber.
     photo: /assets/img/team/marian.jpg
-    twitter:
-    github:
+    twitter: marianzange
+    github: marianzange
 
 matthias:
     index: 4

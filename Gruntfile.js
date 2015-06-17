@@ -84,14 +84,10 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     '<%= c.dest %>/<%= c.assets.js %>/<%= c.assets.basename %>.min.js': [
+                        'node_modules/jquery/dist/jquery.js',
                         'node_modules/parsleyjs/dist/parsley.js',
+                        'node_modules/svg4everybody/svg4everybody.js',
                         '<%= c.src %>/<%= c.assets.js %>/*.js'
-                    ],
-                    '<%= c.dest %>/<%= c.assets.js %>/jquery.min.js': [
-                        'node_modules/jquery/dist/jquery.js'
-                    ],
-                    '<%= c.dest %>/<%= c.assets.js %>/svg4everybody.min.js': [
-                        'node_modules/svg4everybody/svg4everybody.js'
                     ]
                 }
             }

@@ -8,6 +8,13 @@
         <h2 class="member-title">{{ name }} <span class="member-profession">{{ profession }}</span></h2>
         <p class="member-text">{{ text }}</p>
         <p class="member-links">
+            {{#if website }}
+            <a href="{{ website }}" title="Website">
+                <svg class="icon icon-globe">
+                    <use xlink:href="/assets/img/sprite.svg#globe"></use>
+                </svg>
+            </a>
+            {{/if}}
             {{#if twitter }}
             <a href="https://twitter.com/{{ twitter }}" title="Twitter">
                 <svg class="icon icon-twitter">

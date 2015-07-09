@@ -1,8 +1,8 @@
 pablo:
     index: 1
     name: Pablo Fernandez
-    profession: Front End
-    text: Opinionated human being. Rock climber, avid distance runner. Cofounder at @skillhoundapp. Ambassador at @BlueseedProject.
+    profession: Frontend, Backend
+    text: Opinionated human being. Rock climber, avid distance runner.
     photo: /assets/img/team/pablo.jpg
     twitter:
     github:
@@ -10,7 +10,7 @@ pablo:
 max:
     index: 2
     name: Max Stockner
-    profession: Front End
+    profession: Frontend
     text: Max turns Club Mate into code while listening to crazy music. He's focused on JavaScript and PHP.
     photo: /assets/img/team/max.jpg
     twitter:
@@ -19,7 +19,7 @@ max:
 marian:
     index: 3
     name: Marian Zange
-    profession: Python, iOS, Mac, DevOps
+    profession: iOS, Backend, DevOps
     text: Untangles tangled systems and chops problems into bite sized pieces. Aspiring rock and ice climber.
     photo: /assets/img/team/marian.jpg
     twitter: marianzange

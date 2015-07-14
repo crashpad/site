@@ -1,11 +1,12 @@
 pablo:
     index: 1
     name: Pablo Fernandez
-    profession: Frontend, Backend
-    text: Opinionated human being. Rock climber, avid distance runner.
+    profession: Frontend, Backend & DevOps
+    text: Mixes Ruby on Rails drinks at the underground club "Scalable Prototypes".
     photo: /assets/img/team/pablo.jpg
     twitter:
-    github:
+    github: heelhook
+    website: http://onboardinglab.com
 
 max:
     index: 2
